@@ -1,4 +1,4 @@
-# Lab-3
+# Lab-2
 ## Shell Scripring Basics
 Create a shell script that would send an alert email when disk usage exceeds a specific threshold
 
