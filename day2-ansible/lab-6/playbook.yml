@@ -1,0 +1,52 @@
+---
+- name: MySQL Server Configuration
+  hosts: my_hosts
+  become: true
+  become_method: sudo
+  vars_files:
+    - vars/mysql_credentials.yml  # Ansible Vault encrypted file containing MySQL credentials
+  
+  tasks:
+    - name: Install MySQL Server
+      package:
+        name: mysql-server
+        state: present
+  
+    - name: Ensure MySQL Service is Running
+      service:
+        name: mysql.service
+        state: started
+      notify: restart mysql
+
+
+    - name: create a new database
+      mysql_db:
+        name: ivolve
+        state: present 
+
+    # - name: add sample data to database
+    #   copy: src=./dump.sql dest=/tmp/dump.sql
+
+    # - name: insert sample data into database
+    #   mysql_db: name=testdb state=import target=/tmp/dump.sql login_user=root login_password="{{ mysql_root_password }}"
+
+    - name: Create database user with all database privileges
+      become: true
+      community.mysql.mysql_user:
+        name: osama
+        password: osama
+        priv: '*.*:ALL'
+        state: present
+
+    # - name: Create MySQL User with Privileges
+    #   mysql_user:
+    #     name: "{{ mysql_username }}"
+    #     password: "{{ mysql_password }}"
+    #     priv: "{{ mysql_database }}.*:ALL"
+    #     state: present
+    # - name: Test MySQL Connection
+    #   mysql_ping:
+    #     login_host: "{{ ansible_host }}"
+    #     login_user: "{{ mysql_username }}"
+    #     login_password: "{{ mysql_password }}"
+    #     login_db: "{{ mysql_database }}"
