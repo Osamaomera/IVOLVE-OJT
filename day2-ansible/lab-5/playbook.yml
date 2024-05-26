@@ -2,25 +2,21 @@
 - name: Install Nginx and Serve Sample HTML Page
   hosts: my_hosts
   become: true
-  
   tasks:
     - name: Install Nginx
       package:
         name: nginx
         state: present
-
     - name: Ensure Nginx service is running
       service:
         name: nginx
         state: started
         enabled: yes
-
     - name: Create directory for sample HTML page
       file:
         path: /var/www/html
         state: directory
         mode: "0755"
-
     - name: Create sample HTML page
       copy:
         content: |
@@ -36,14 +32,12 @@
           </html>
         dest: /var/www/html/index.html
         mode: "0644"
-
     - name: Configure Nginx to serve the sample HTML page
       template:
         src: nginx.conf.j2
         dest: /etc/nginx/sites-available/default
       notify:
         - restart nginx
-
   handlers:
     - name: restart nginx
       service:
