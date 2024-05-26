@@ -8,7 +8,7 @@ install ansible and configure automation paltform on control nodes, create inven
     sudo apt install ansible #for ubuntu
     sudo dnf install ansible #for redhat
     ```
-2. clone the repository or download the `inventory` sfile to your local machine.
+2. clone the repository or download the `inventory` file to your local machine.
 
 3. add 3 hosts to your invntory file:
     ```
@@ -19,13 +19,17 @@ install ansible and configure automation paltform on control nodes, create inven
 3. Run the ad-hoc command in ansible to 3 hosts 
     ```sh
     ansible all -i inventory -b -m shell -a 
-    "useradd ivolve && touch /home/ivolve/file{1..3}.txt"
+    "useradd osama && touch /home/osama/file{1..3}.txt"
     ```
-### Example Output 
-    ```sh
-    Server 192.168.1.63 is up and Running
-    Server 192.168.1.64 is up and Running
-    Server 192.168.1.65 is unreachable
-    Server 192.168.1.66 is unreachable 
-    ```
+#  Output 
+## Server A
+### the user osama is created and also 3 files is created (file1,file2,file3).txt
+  ![](connect-to-server-output.png)
+
+# Server B
+### the user osama is created and also 3 files is created (file1,file2,file3).txt
+  ![](serverb-output.png)
     
+# Server C
+### the user osama is created and also 3 files is created (file1,file2,file3).txt
+  ![](serverc-output.png)
