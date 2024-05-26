@@ -12,7 +12,8 @@ Create a shell script that would send an alert email when disk usage exceeds a s
     ```sh
     ./alert-disk-usage.sh
     ```
-### Example Output 
-    ```sh
-    ```
+###  Output of mail alert
+ ![](alert.png)
     
+### Output of message in mail 
+ ![](message.png)
