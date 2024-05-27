@@ -5,21 +5,15 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 ## Step 1: Create AWS Account
 - Go to the AWS website and sign up for an account.
 - Follow the on-screen instructions to complete the registration.
-<<<<<<< HEAD
+
 ![](screenshots\signup.png)
-=======
-![](day3-aws/lab-19/screenshots\signup.png)
->>>>>>> 7609a07a28ff9f36ac6d53186592d4110669b6a2
 
 ## Step 2: Set Billing Alarm with create a budget
 1. Open the AWS Management Console.
 2. In the Billing and Cost Management Dashboard, select Budgets from the navigation pane.
 3. Click on Create a budget.
 4. Configure Budget Details i choose use templates and zero spend budget 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 7609a07a28ff9f36ac6d53186592d4110669b6a2
+
     ![](screenshots\budget1.png)
 
 5. next enter a budget name and specify your email to notify when threshold has exceeds
