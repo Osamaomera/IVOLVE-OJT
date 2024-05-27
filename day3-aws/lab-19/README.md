@@ -6,7 +6,7 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 - Go to the AWS website and sign up for an account.
 - Follow the on-screen instructions to complete the registration.
 
-![](screenshots\signup.png)
+![](day3-aws/lab-19/screenshots\signup.png)
 
 ## Step 2: Set Billing Alarm with create a budget
 1. Open the AWS Management Console.
