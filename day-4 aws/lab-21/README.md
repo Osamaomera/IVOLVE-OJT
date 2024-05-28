@@ -1,14 +1,19 @@
 # Lab 21 
-## Objective: 
-### create VPC with 2 subnets, launch 2 EC2s with nginx and apache installed, and create and configure a Load Balancer to access the Web server.
+## Objective
+Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache installed, and configure a Load Balancer to access the web servers.
 
+## Prerequisites
+- AWS account with necessary permissions.
+- Basic knowledge of VPC, EC2, and Load Balancers in AWS.
+
+## Steps
 
 ## First Log in and search for service:
 1. Log in to AWS Management Console: Go to AWS Management Console.
 2. Navigate to VPC Dashboard: In the Services menu, under Networking & Content Delivery, select VPC.
 
-## Step 1: Create a VPC
 
+## Step 1: Create a VPC
 
 1. Click on “Your VPCs” in the left menu.
 2. Click on “Create VPC”.
