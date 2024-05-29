@@ -178,6 +178,8 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
 
     ![Connect to Private Instance](copy-key.png)
 
+    ![Connect to Private Instance](key-coped.png)
+
 ## Conclusion
 You have successfully created a VPC with public and private subnets, launched EC2 instances, configured security groups, and connected to a private instance using a bastion host.
 
