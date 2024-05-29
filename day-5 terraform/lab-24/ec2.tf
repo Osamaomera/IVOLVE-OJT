@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "ivolve_web" {
 
   ami           = "ami-00beae93a2d981137"  # Update to your preferred AMI
   instance_type = var.ec2_instance_type

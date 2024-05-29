@@ -1,24 +1,27 @@
 resource "aws_db_instance" "db" {
-  
-  for_each = var.private_subnets
+  count = length(var.private_subnets)
 
-  identifier          = "db-${each.key}"
-  engine              = "mysql"
-  engine_version      = var.db_engine_version
-  instance_class      = var.rds_instance_type
-  allocated_storage   = 10
-  db_name             = var.db_name
-  username            = var.db_username
-  password            = var.db_password
-  db_subnet_group_name = aws_db_subnet_group.main.name
+  identifier             = "db-${var.private_subnets[count.index].key}"
+  engine                 = "mysql"
+  engine_version         = var.db_engine_version
+  instance_class         = var.rds_instance_type
+  allocated_storage      = 10
+  db_name                = var.db_name
+  username               = var.db_username
+  password               = var.db_password
+  db_subnet_group_name   = aws_db_subnet_group.main.name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
   skip_final_snapshot = true
+
+  # Set the subnet ID based on the current element in the private_subnets list
+  # subnet_id = var.private_subnets[count.index].value
+
 }
 
 resource "aws_db_subnet_group" "main" {
   name       = "main"
-  subnet_ids = [for s in aws_subnet.private_subnet : s.id]
+  subnet_ids = var.private_subnets[count.index].value
 
   tags = {
     Name = "Main DB Subnet Group"

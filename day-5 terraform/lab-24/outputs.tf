@@ -11,7 +11,7 @@ output "private_subnet_ids" {
 }
 
 output "ec2_instance_id" {
-  value = aws_instance.web.id
+  value = aws_instance.ivolve_web.id
 }
 
 output "rds_instance_ids" {
