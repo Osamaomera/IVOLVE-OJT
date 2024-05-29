@@ -27,6 +27,8 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 
     ![Create DynamoDB Table](dynamo4.png)
 
+-----------------------------------------------------------------
+
 ## Step 2: Create an IAM Role for Lambda
 1. Navigate to the **IAM** service in the AWS Management Console.
 2. Click **Roles** on the sidebar, then **Create role**.
@@ -54,6 +56,8 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 
     ![Create IAM Role](role7.png)
 
+-----------------------------------------------------------------------
+
 ## Step 3: Create a Lambda Function
 1. Navigate to the **Lambda** service.
 2. Click **Create function**.
@@ -72,9 +76,9 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 
     ![Create Lambda Function](lambda3.png)
 
-    
+-------------------------------------------------------------------------    
 
-### Step 4: Add Code to Lambda Function
+## Step 4: Add Code to Lambda Function
 1. Scroll down to the **Function code** section.
 2. Replace the default code with the following:
 
@@ -144,6 +148,8 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
     ### Screenshot:
     ![Create Lambda Function](lambda4.png)
     
+---------------------------------------------------------------------------
+
 ## Step 5: Create an API Gateway
 1. Navigate to the **API Gateway** service.
 2. Click **Create API**.
@@ -161,8 +167,9 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 
     ![Create API Gateway](api2.png)
 
+---------------------------------------------------------------------------
 
-## Step 5: Develop Front-End
+## Step 6: Develop Front-End
 
 Create an `index.html` file while in the repo on your local machine:
 
@@ -170,7 +177,9 @@ Create an `index.html` file while in the repo on your local machine:
 - **PUT request**: Used to add new to-do items to DynamoDB.
 - **GET request**: Used to retrieve all to-do items from DynamoDB.
 
-## Step 6: How to Use the Front-End
+----------------------------------------------------------------------
+
+## Step 7: How to Use the Front-End
 
 1. Replace **{invoke-url}**: Replace **{invoke-url}** in the apiUrl variable with the actual Invoke URL from your API Gateway.
 
@@ -186,6 +195,7 @@ Create an `index.html` file while in the repo on your local machine:
 
     ![web site](output.png)
 
+------------------------------------------------------------------------------
 
 ## Summary
 In this lab, you learned how to build a serverless application using AWS Lambda, API Gateway, and DynamoDB. You created a DynamoDB table, configured IAM roles, wrote a Lambda function, set up an API Gateway, and tested your serverless application.
