@@ -156,7 +156,7 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 3. Choose **HTTP API**.
 4. Click **Build**.
 5. Enter the following details:
-    - **API name**: `serverless-app-api`
+    - **API name**: `serverless-ivolve-api`
 6. Click **Next** until you reach the **Configure routes** section.
 7. Click **Add integration** and select **Lambda**.
 8. Choose the **serverless-app-function** Lambda function.
