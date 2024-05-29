@@ -20,7 +20,6 @@ This project uses Terraform to define and deploy a multi-tier architecture on AW
 - `variables.tf`: Defines all the variables used in the project.
 - `provider.tf`: Configures the AWS provider.
 - `vpc.tf`: Creates the VPC and subnets.
-- `security_groups.tf`: Creates security groups for the EC2 instance and RDS database.
 - `ec2.tf`: Creates the EC2 instance.
 - `rds.tf`: Creates the RDS instances and subnet group.
 - `outputs.tf`: Defines the outputs for the infrastructure.
