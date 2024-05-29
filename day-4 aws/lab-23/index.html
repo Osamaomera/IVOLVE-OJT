@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="todoItem" placeholder="Enter a new to-do item">
+    <button onclick="addTodo()">Add</button>
+    <h2>Items</h2>
+    <ul id="todoList"></ul>
+
+    <script>
+        const apiUrl = 'https://{invoke-url}/deploy/default/todo'; // Replace {invoke-url} with your API Gateway URL
+
+        async function addTodo() {
+            const item = document.getElementById('todoItem').value;
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item })
+            });
+            if (response.ok) {
+                document.getElementById('todoItem').value = '';
+                loadTodos();
+            } else {
+                console.error('Failed to add item');
+            }
+        }
+
+        async function loadTodos() {
+            const response = await fetch(apiUrl);
+            const items = await response.json();
+            const todoList = document.getElementById('todoList');
+            todoList.innerHTML = '';
+            items.forEach(todo => {
+                const li = document.createElement('li');
+                li.textContent = todo.item;
+                todoList.appendChild(li);
+            });
+        }
+
+        loadTodos();
+    </script>
+</body>
+</html>
