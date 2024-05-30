@@ -13,6 +13,9 @@ The inventory file `inventories/hosts` contains the following:
 
 ## Roles
 
+
+![alt text](role2.png)
+
 ### Docker Role
 
 This Ansible role installs Docker on the target hosts and adds a specified user to the Docker group.
@@ -155,3 +158,27 @@ Replace `inventory` with the path to your actual Ansible inventory file. Adjust 
 ```
 
 ## Screenshots.
+## Key created 
+  
+  ![alt text](create-key.png)
+
+  ![alt text](copy-key.png)
+
+## Run Playbooks
+### jenkins and docker 
+
+  ![alt text](jenkins-docker.png)
+
+  ![alt text](jenkins-docker2.png)
+
+### OC 
+
+  ![alt text](oc.png)
+
+## Ensure the installing by run adhook commands
+
+![alt text](docker-output.png)
+
+![alt text](jenkins-output.png)
+
+![alt text](oc-output.png)
