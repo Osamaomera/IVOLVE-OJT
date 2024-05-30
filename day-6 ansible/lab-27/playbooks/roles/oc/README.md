@@ -1,38 +1,34 @@
-Role Name
-=========
+# OpenShift CLI (oc) Role
 
-A brief description of the role goes here.
+This Ansible role installs the OpenShift CLI (oc) on the target host.
 
-Requirements
-------------
+## Tasks
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+The role performs the following tasks:
 
-Role Variables
---------------
+1. **Download oc CLI**: Downloads the OpenShift CLI tarball from the official release.
+2. **Extract oc CLI**: Extracts the tarball to the `/usr/local/bin` directory.
+3. **Ensure oc CLI is Executable**: Ensures that the `oc` binary is executable.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Directory Structure
 
-Dependencies
-------------
+roles/oc/
+├── README.md
+└── tasks
+└── main.yml
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Example Playbook
-----------------
+## Role Variables
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+No variables are required for this role.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+## Usage
 
-License
--------
+Include the `oc` role in your playbook:
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+```yaml
+- hosts: all
+  become: yes
+  roles:
+    - oc
+```
