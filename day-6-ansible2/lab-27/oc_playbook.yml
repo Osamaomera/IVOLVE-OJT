@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    oc_version: "4.10.1"
+  
+  roles:
+    - roles/oc
+
