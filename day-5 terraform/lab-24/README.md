@@ -28,9 +28,55 @@ This project uses Terraform to define and deploy a multi-tier architecture on AW
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/osamaomera/!!!.git
-   cd your-repo-name
+   git clone https://github.com/Osamaomera/IVOLVE-OJT.git
+   cd day-5 terraform
+   cd lab-24
 
 2. **Initialize Terraform**:
     ```sh
    terraform init
+    ```
+    ![alt text](init.png)
+
+3. Review and adjust variables in `variables.tf` according to your requirements.
+
+   ```bash
+   terraform plan 
+   ```
+   ![alt text](plan.png)
+
+   ![alt text](plan1.png)
+
+   ![alt text](plan2.png)
+
+4. Apply the Terraform configuration:
+
+   ```bash
+   terraform apply --auto-approve
+   ```
+## Customization
+
+Feel free to customize the configuration files as per your project requirements. You can modify subnet CIDRs, AZs, instance types, database credentials, etc., in the variables and configuration files.
+
+## Screenshots
+
+   ![alt text](lab-24-subnets.png)
+
+   ![alt text](lab-24-rt.png)
+
+   ![alt text](lab-24-igw.png)
+
+   ![alt text](lab-24-rds.png)
+
+## Cleanup
+
+After testing or when done with the resources, you can destroy them using Terraform:
+
+```bash
+terraform destroy --auto-approve
+```
+
+## Notes
+
+- Make sure to review and understand the changes before applying Terraform to avoid unintended consequences.
+- Always follow best practices for security and cost optimization when deploying resources on AWS.
