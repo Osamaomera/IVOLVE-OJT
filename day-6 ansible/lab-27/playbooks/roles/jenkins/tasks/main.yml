@@ -1,0 +1,13 @@
+---
+- name: Install Jenkins
+  dnf:
+    name: jenkins
+    state: present
+  become: yes
+
+- name: Start Jenkins service
+  systemd:
+    name: jenkins
+    state: started
+    enabled: yes
+  become: yes
