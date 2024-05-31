@@ -6,7 +6,7 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 - Go to the AWS website and sign up for an account.
 - Follow the on-screen instructions to complete the registration.
 
-![](signup.png)
+![](screenshots/signup.png)
 
 ## Step 2: Set Billing Alarm with create a budget
 1. Open the AWS Management Console.
@@ -14,15 +14,15 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 3. Click on Create a budget.
 4. Configure Budget Details i choose use templates and zero spend budget 
 
-    ![](budget1.png)
+    ![](screenshots/budget1.png)
 
 5. next enter a budget name and specify your email to notify when threshold has exceeds
     
-    ![](budget2.png)
+    ![](screenshots/budget2.png)
 
 6. the click in create budget and your budget is created
     
-    ![](budget3.png)
+    ![](screenshots/budget3.png)
 
 
 ## Step 3: Create IAM Groups
@@ -30,7 +30,7 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 1. Open the IAM console.
 2. Select User groups > Create group.    
 3. Enter Admin for the group name.
-    ![](create-group.png) 
+    ![](screenshots/create-group.png) 
 
 4. Attach the AdministratorAccess policy.
 5. Click Create group.
@@ -39,14 +39,14 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 1. Open the IAM console.
 2. Select User groups > Create group.
     
-    ![](group1.png)
+    ![](screenshots/group1.png)
 3. Enter developer for the group name and attach s3 full access.
     
-    ![](group-dev-2.png)
+    ![](screenshots/group-dev-2.png)
 
 4. Click Create group then all two groups created.
 
-    ![](groups.png)
+    ![](screenshots/groups.png)
 
 ## Step 4: Create IAM Users
 ### 4.1 Create Admin User (admin-1)
@@ -55,10 +55,10 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
  3. Select AWS Management Console access.
  4. Set a custom password and require password reset at next sign-in.
 
-    ![](admin1-create.png)
+    ![](screenshots/admin1-create.png)
  5. Add the user to the Admin group.
 
-    ![](admin1-to-group.png)
+    ![](screenshots/admin1-to-group.png)
  6. Review and Click Create user.
  ------------------------------------------------------------------------
 ### 4.2 Create Admin User (admin-2)
@@ -67,11 +67,11 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
  3. Select AWS Management Console access.
  4. Set a custom password and require password reset at next sign-in.
 
-    ![](admin2-create.png)
+    ![](screenshots/admin2-create.png)
 
 5. Add the user to the Admin group.
 
-    ![](admin2-to-group.png)
+    ![](screenshots/admin2-to-group.png)
  6. Review and Click Create user.
 ------------------------------------------------------------------------
 ### 4.3 Create developer User (dev)
@@ -80,29 +80,29 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
  3. Select AWS Management Console access.
  4. Set a custom password and require password reset at next sign-in.
     
-    ![](dev-create.png)
+    ![](screenshots/dev-create.png)
  5. Add the user to the developer group
         
-    ![](dev-to-group.png)
+    ![](screenshots/dev-to-group.png)
  6. Review and Click Create user.
 
-     ![](dev-reviewpng.png)
+     ![](screenshots/dev-reviewpng.png)
     ### All Users created
-    ![](users.png)
+    ![](screenshots/users.png)
 --------------------------------------------------------------
 
 ### MFA authentication to Admin-1 user to easily login to console
 #### Assign MFA to user 
-![](mfa-for-admin1.png)
+![](screenshots/mfa-for-admin1.png)
 
  1. setup device like authenticator application running in your device 
-    ![](mfa-mobile.png)
+    ![](screenshots/mfa-mobile.png)
 
  2. Enter the code that show in your authenticator application and wait 30 seconds and enter another code 
-    ![](mfa.png)
+    ![](screenshots/mfa.png)
 
 3. Click Add MFA then the MFA add successfully
-    ![](enabled-mfa.png)
+    ![](screenshots/enabled-mfa.png)
 
 
 ----------------------------------------------------------------------------
@@ -111,38 +111,38 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
 ### First with Admin-1 which has access to aws console and has a MFA to login 
 1. sign in by IAM user by copy the code of Aws account and enter the username and password
 
-    ![](signin-admin-1.png)
+    ![](screenshots/signin-admin-1.png)
 2. Click Sign in .
 3. After this will show The MFA window to enter the code that on the Authenticator app on your device 
-    ![](mfa-admin1.png)
+    ![](screenshots/mfa-admin1.png)
 4. After you enter the code Click Submit
 5. Now you have adminstrator access on aws console 
-    ![](admin-1-console.png)
+    ![](screenshots/admin-1-console.png)
 
 ----------------------------------------------------------------------------------
 
 ### Now create a access key to admin-2 and dev user because enable me to access aws by command line interface 
 1. go to users > admin-2 > security tab 
      
-     ![](admin-key-1png.png)
+     ![](screenshots/admin-key-1png.png)
 
 2. and Create Access key 
      
-     ![](admin-key-2.png)
+     ![](screenshots/admin-key-2.png)
 3. choose CLI access and mark the choice below that you understand and want to create a access key       
      
-     ![](admin-key-3.png)
+     ![](screenshots/admin-key-3.png)
      
 4. Add a Description or tag name for your access key      
      
-     ![](admin-key-4.png)
+     ![](screenshots/admin-key-4.png)
 
 5. You should save your access key or download a .csv file before you done 
-     ![](admin-key-5.png)
+     ![](screenshots/admin-key-5.png)
 
 #### Repeate this steps with dev user and Don"t forget to save the .csv file of access key 
 
-![](cli-key.png)
+![](screenshots/cli-key.png)
 
 
 -------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
     aws iam list-users
     ```
     
-    ![](admin-2-access-cli.png)
+    ![](screenshots/admin-2-access-cli.png)
 
 6. Do this also to login in with dev user but dev has only s3 full access when i run this command the output is access denied.
     ```sh
@@ -169,5 +169,5 @@ Create AWS account, set billing alarm, create 2 IAM groups (admin-developer), ad
     ```
     
 
-     ![](cli-dev.png)
+     ![](screenshots/cli-dev.png)
 ------------------------------------------------------------------------------

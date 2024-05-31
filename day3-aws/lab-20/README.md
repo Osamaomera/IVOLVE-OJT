@@ -20,9 +20,9 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
     - **Tenancy**: Default
 5. Click **Create VPC**.
 
-    ![Create VPC](vpc.png)
+    ![Create VPC](screenshots/vpc.png)
 
-    ![Create VPC](vpc-created.png)
+    ![Create VPC](screenshots/vpc-created.png)
 
 
 ## Step 2: Create Subnets
@@ -36,7 +36,7 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
     - **IPv4 CIDR block**: `10.0.1.0/24`
 3. Click **Create subnet**.
 
-    ![Create Public Subnet](publicsubnet.png)
+    ![Create Public Subnet](screenshots/publicsubnet.png)
 
 #### Create a Private Subnet
 
@@ -47,7 +47,7 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
     - **IPv4 CIDR block**: `10.0.2.0/24`
 3. Click **Create subnet**.
 
-    ![Create Private Subnet](privatesubnet.png)
+    ![Create Private Subnet](screenshots/privatesubnet.png)
 
 ## Step 3: Create an Internet Gateway
 
@@ -58,13 +58,13 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
 4. Select the newly created Internet Gateway and click **Attach to VPC**.
 5. Select `lab-20` and click **Attach internet gateway**.
 
-    ![Create Internet Gateway](igw-create.png)
+    ![Create Internet Gateway](screenshots/igw-create.png)
 
-    ![Create Internet Gateway](igw-create2.png)
+    ![Create Internet Gateway](screenshots/igw-create2.png)
 
-    ![Create Internet Gateway](attachtovpc.png)
+    ![Create Internet Gateway](screenshots/attachtovpc.png)
 
-    ![Create Internet Gateway](attachtovpc2.png)
+    ![Create Internet Gateway](screenshots/attachtovpc2.png)
 
 ## Step 4: Create Route Tables
 
@@ -83,9 +83,9 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
 7. Select the Route Table and click **Edit subnet associations**.
 8. Associate the **PublicSubnet** with this Route Table.
 
-    ![Create Public Route Table](publicrt.png)
+    ![Create Public Route Table](screenshots/publicrt.png)
 
-    ![Create Public Route Table](associate-publicrt.png)
+    ![Create Public Route Table](screenshots/associate-publicrt.png)
 
 ### Create a Route Table for the Private Subnet
 
@@ -97,11 +97,11 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
 4. Select the Route Table and click **Edit subnet associations**.
 5. Associate the **PrivateSubnet** with this Route Table.
 
-    ![Create Private Route Table](privatert.png)
+    ![Create Private Route Table](screenshots/privatert.png)
 
-    ![Create Private Route Table](privatert-2.png)
+    ![Create Private Route Table](screenshots/privatert-2.png)
 
-    ![Create Private Route Table](associate-privatert.png)
+    ![Create Private Route Table](screenshots/associate-privatert.png)
 
 ## Step 5: Launch an EC2 Instance in the Public Subnet (Bastion Host)
 
@@ -125,9 +125,9 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
                 - **Source**: Your IP
 4. Click **Launch instance**.
 
-    ![Launch Bastion Host](public-ec2.png)
+    ![Launch Bastion Host](screenshots/public-ec2.png)
 
-    ![Launch Bastion Host](public-ec2-sg.png)
+    ![Launch Bastion Host](screenshots/public-ec2-sg.png)
 
 
 ## Step 6: Launch an EC2 Instance in the Private Subnet
@@ -152,7 +152,7 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
                 - **Source**: `publicsg`
 4. Click **Launch instance**.
 
-![Launch Private Instance](instances.png)
+![Launch Private Instance](screenshots/instances.png)
 
 ## Step 7: Connect to the Bastion Host
 
@@ -162,7 +162,7 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
     ssh -i ec2-ivolve.pem ec2-user@54.81.45.50
     ```
     
-    ![Connect to Bastion Host](ssh-public.png)
+    ![Connect to Bastion Host](screenshots/ssh-public.png)
 
 ### Step 8: Connect to the Private Instance via Bastion Host
 
@@ -176,9 +176,9 @@ Create a private subnet, launch an EC2 instance, configure security groups, and 
     ssh -i /path/to/your-key-pair.pem ec2-user@<PrivateInstancePrivateIP>
     ```
 
-    ![Connect to Private Instance](copy-key.png)
+    ![Connect to Private Instance](screenshots/copy-key.png)
 
-    ![Connect to Private Instance](key-coped.png)
+    ![Connect to Private Instance](screenshots/key-coped.png)
 
 ## Conclusion
 You have successfully created a VPC with public and private subnets, launched EC2 instances, configured security groups, and connected to a private instance using a bastion host.
