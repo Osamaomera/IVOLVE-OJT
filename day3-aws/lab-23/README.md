@@ -19,13 +19,13 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 5. Click **Create**.
 
     ### Screenshot:
-    ![Create DynamoDB Table](dynamo1.png)
+    ![Create DynamoDB Table](screenshots/dynamo1.png)
 
-    ![Create DynamoDB Table](dynamo2.png)
+    ![Create DynamoDB Table](screenshots/dynamo2.png)
 
-    ![Create DynamoDB Table](dynamo3.png)
+    ![Create DynamoDB Table](screenshots/dynamo3.png)
 
-    ![Create DynamoDB Table](dynamo4.png)
+    ![Create DynamoDB Table](screenshots/dynamo4.png)
 
 -----------------------------------------------------------------
 
@@ -42,19 +42,19 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 8. Click **Create role**.
 
     ### Screenshot:
-    ![Create IAM Role](role1.png)
+    ![Create IAM Role](screenshots/role1.png)
 
-    ![Create IAM Role](role2.png)
+    ![Create IAM Role](screenshots/role2.png)
 
-    ![Create IAM Role](role3.png)
+    ![Create IAM Role](screenshots/role3.png)
 
-    ![Create IAM Role](role4.png)
+    ![Create IAM Role](screenshots/role4.png)
 
-    ![Create IAM Role](role5.png)
+    ![Create IAM Role](screenshots/role5.png)
 
-    ![Create IAM Role](role6.png)
+    ![Create IAM Role](screenshots/role6.png)
 
-    ![Create IAM Role](role7.png)
+    ![Create IAM Role](screenshots/role7.png)
 
 -----------------------------------------------------------------------
 
@@ -70,11 +70,11 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 5. Click **Create function**.
 
     ### Screenshot:
-    ![Create Lambda Function](lambda1.png)
+    ![Create Lambda Function](screenshots/lambda1.png)
 
-    ![Create Lambda Function](lambda2.png)
+    ![Create Lambda Function](screenshots/lambda2.png)
 
-    ![Create Lambda Function](lambda3.png)
+    ![Create Lambda Function](screenshots/lambda3.png)
 
 -------------------------------------------------------------------------    
 
@@ -146,7 +146,7 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 3. Click **Deploy**.
 
     ### Screenshot:
-    ![Create Lambda Function](lambda4.png)
+    ![Create Lambda Function](screenshots/lambda4.png)
     
 ---------------------------------------------------------------------------
 
@@ -163,9 +163,9 @@ Build a serverless application using AWS Lambda, API Gateway, and DynamoDB.
 9. Click **Next**, then **Create**.
 
     ### Screenshot:
-    ![Create API Gateway](api1.png)
+    ![Create API Gateway](screenshots/api1.png)
 
-    ![Create API Gateway](api2.png)
+    ![Create API Gateway](screenshots/api2.png)
 
 ---------------------------------------------------------------------------
 
@@ -189,11 +189,11 @@ Create an `index.html` file while in the repo on your local machine:
     - The list will automatically update to show the items retrieved from the DynamoDB table.
 
      ### Screenshot:
-    ![Index edit](api3.png)
+    ![Index edit](screenshots/api3.png)
 
-    ![Index edit](api4.png)
+    ![Index edit](screenshots/api4.png)
 
-    ![web site](output.png)
+    ![web site](screenshots/output.png)
 
 ------------------------------------------------------------------------------
 

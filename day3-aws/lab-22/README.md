@@ -31,9 +31,9 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Create S3 Bucket](create1.png)
+    ![Create S3 Bucket](screenshots/create1.png)
 
-    ![Create S3 Bucket](create2.png)
+    ![Create S3 Bucket](screenshots/create2.png)
 
 --------------------------------------------
 ## Step 2: Configure Permissions
@@ -62,9 +62,9 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Configure Permissions](policy1.png)
+    ![Configure Permissions](screenshots/policy1.png)
 
-    ![Configure Permissions](policy2.png)
+    ![Configure Permissions](screenshots/policy2.png)
 ---------------------------------------------------------
 
 ## Step 3: Upload a File to the Bucket
@@ -81,7 +81,7 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Upload File](upload-file.png)
+    ![Upload File](screenshots/upload-file.png)
 
 ------------------------------------------------------------
 
@@ -99,7 +99,7 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Download File](download-file.png)
+    ![Download File](screenshots/download-file.png)
 
 -----------------------------------------------------------------
 
@@ -117,7 +117,7 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Enable Versioning](versioning.png)
+    ![Enable Versioning](screenshots/versioning.png)
 ---------------------------------------------------------------
 
 ## Step 6: Enable Logging for the Bucket
@@ -147,15 +147,15 @@ Use the AWS CLI to:
     ```
 
     ### Screenshot:
-    ![Enable Logging](logging.png)
+    ![Enable Logging](screenshots/logging.png)
 
 -------------------------------------------------------------------
 
 ## Screenshots From Console 
 
-   ![GUI](bucket.png)
+   ![GUI](screenshots/bucket.png)
 
-   ![GUI](file-txt.png)
+   ![GUI](screenshots/file-txt.png)
 
 ## Summary
 In this lab, you learned how to use the AWS CLI to create and manage an S3 bucket, configure permissions, upload and download files, and enable versioning and logging.

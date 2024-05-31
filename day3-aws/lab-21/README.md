@@ -18,7 +18,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 1. Click on “Your VPCs” in the left menu.
 2. Click on “Create VPC”.
 
-    ![](vpc1.png)
+    ![](screenshots/vpc1.png)
 
 
 
@@ -27,7 +27,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 5. Leave IPv6 CIDR block as default (No IPv6 CIDR Block).
 6. Tenancy: Default.
 
-    ![](vpc2.png)
+    ![](screenshots/vpc2.png)
 
 7. Click on “Create VPC”.
     
@@ -38,14 +38,14 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 1. In the VPC Dashboard, click on “Subnets” in the left menu.
 2. Click on “Create subnet”.
     
-    ![](subnet1.png)
+    ![](screenshots/subnet1.png)
 
 3. Select your VPC.
 4. Name tag: PublicSubnet1.
 5. Availability Zone: Choose one (e.g., us-east-1a).
 6. IPv4 CIDR block: 10.0.1.0/24.
 
-    ![](subnet2.png)
+    ![](screenshots/subnet2.png)
 
 7. Click on “Create subnet”.
 
@@ -56,7 +56,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 4. Availability Zone: Choose a different one (e.g., us-east-1b).
 5. IPv4 CIDR block: 10.0.2.0/24.
 
-    ![](subnet3.png)
+    ![](screenshots/subnet3.png)
 
 6. Click on “Create subnet”.
 
@@ -66,11 +66,11 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 1. Click on **Internet gateways** in the left menu.
 2. Create **Internet gateways**.
 
-	![alt text](igw1.png)
+	![alt text](screenshots/igw1.png)
 3. After create a **Internet gateways** click to **Attach to VPC**.
 4. Choose **lab-21 VPC**.
 
-	![alt text](igw2.png)
+	![alt text](screenshots/igw2.png)
 
 ------------------------------------------------------------------
 ## Step 4: Create Subnet Route Tables
@@ -79,35 +79,35 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 2. Click on **Route Tables** in the left menu.
 3. Create a route table.
 
-    ![](rt1.png)
+    ![](screenshots/rt1.png)
 
 3. Name : **lab21-rt**
 4. Choose the **lab-21 VPC**
 5. Create route table.
 
-    ![](rt2.png)
+    ![](screenshots/rt2.png)
 
 6. Click on the **Routes** tab, then **Edit routes**.
 
-    ![](rt3.png)
+    ![](screenshots/rt3.png)
 
 4. Click on **Add route**.
 5. Destination: 0.0.0.0/0.
 6. Target: Select **Internet Gateway** (which we creat in **Step 3**).
 7. CLick on **Save Changes**.
 
-	![alt text](rt4.png)
+	![alt text](screenshots/rt4.png)
 
 8. Associate Subnets with **Route Table:**
 9. In the Route Tables view, select **Actions** .
 10. Click on **Edit subnet associations**.
 
-	![alt text](rt5.png)
+	![alt text](screenshots/rt5.png)
 
 11. Select both **PublicSubnet-1** and **PublicSubnet-2**.
 12. Click on **Save**.
 
-	![alt text](rt6.png)
+	![alt text](screenshots/rt6.png)
 
 ## Step 4: Launch EC2 Instances
 ### Launch EC2 Instance 1 (Nginx):
@@ -115,7 +115,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 1. Navigate to the EC2 Dashboard.
 2. Click on **Launch Instance**.
 
-	![alt text](ec2-1.png)
+	![alt text](screenshots/ec2-1.png)
 
 3.  Choose an AMI (e.g., Amazon Linux 2).
 4.  Choose an instance type (e.g., t2.micro).
@@ -129,11 +129,11 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 12. Select an existing security group.
 13. Allow HTTP (port 80) and SSH (port 22).
 
-	![alt text](ec2-2.png)
+	![alt text](screenshots/ec2-2.png)
 
 14. Review and Launch.
 
-	![alt text](nginx-ec2.png)
+	![alt text](screenshots/nginx-ec2.png)
 
 15. Connect to the instance using SSH and install Nginx:
 ```sh
@@ -142,16 +142,16 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 	sudo systemctl start nginx
 	sudo systemctl enable nginx
 ```
-![alt text](nginx-ec2-1.png)
+![alt text](screenshots/nginx-ec2-1.png)
 
-![alt text](nginx-ec2-2.png)
+![alt text](screenshots/nginx-ec2-2.png)
 
-![alt text](nginx-ec2-3.png)
+![alt text](screenshots/nginx-ec2-3.png)
 ---------------------------------------------------------------------
 ## Launch EC2 Instance 2 (Apache):
 ### Repeat the steps above, but select **PublicSubnet-2** for the subnet.
 
-![alt text](apache-ec2-1.png)
+![alt text](screenshots/apache-ec2-1.png)
 
 ```sh
 	sudo yum update -y
@@ -161,7 +161,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 	sudo systemctl status httpd
 ```
 
-![alt text](apache-ec2-2.png)
+![alt text](screenshots/apache-ec2-2.png)
 
 
 --------------------------------------------------------------------
@@ -173,11 +173,11 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 3. Click on **Load Balancers** in the left menu.
 4. Click on **Create Load Balancer**.
 
-	![alt text](lb1.png)
+	![alt text](screenshots/lb1.png)
 
 5. Choose “Application Load Balancer”.
 
-	![alt text](lb2.png)
+	![alt text](screenshots/lb2.png)
 
 6. Name: MyLoadBalancer.
 7. Scheme: Internet-facing.
@@ -186,7 +186,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 10. VPC: Select your VPC **lab-21 VPC**.
 11. Select both subnets (**PublicSubnet-1** and **PublicSubnet-2**).
 
-	![alt text](lb3.png)
+	![alt text](screenshots/lb3.png)
 
 12. Click on “Next: Configure Security Settings”.
 
@@ -197,7 +197,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 16.	Configure Routing:
 17. Create a target group:
 
-	![alt text](target-group.png)
+	![alt text](screenshots/target-group.png)
 
 18. Name: MyTargetGroup.
 19. Target type: Instances.
@@ -208,16 +208,16 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 24. Register Targets:
 25. Select your EC2 instances (both Nginx and Apache).
 
-	![alt text](regestriestarget.png)
+	![alt text](screenshots/regestriestarget.png)
 
 26. Click on **Include as pending below**.
 27. Review your settings and click **Create target group**.
 
-	![alt text](regestriestarget2.png)
+	![alt text](screenshots/regestriestarget2.png)
 
 28. Select this **ivolve-targetgroup**.
 
-	![alt text](lb4.png)
+	![alt text](screenshots/lb4.png)
 
 29. Click on **Create load balancer**.
 
@@ -230,16 +230,16 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 3. Select your load balancer.
 4. Copy the DNS name.
 
-	![alt text](lb5.png)
+	![alt text](screenshots/lb5.png)
 	
 5. Access the Web Servers:
 6. Open a web browser and enter the DNS name.
 this is **nginx**
-	![alt text](lb-nginx.png)
+	![alt text](screenshots/lb-nginx.png)
 
 7. Refresh the page multiple times to see both Nginx and Apache
 this is **Apache** 
 
-	![alt text](lb-apache.png)
+	![alt text](screenshots/lb-apache.png)
 
 -----------------------------------------------------
