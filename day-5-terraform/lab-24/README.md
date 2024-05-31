@@ -2,6 +2,17 @@
 
 This project uses Terraform to define and deploy a multi-tier architecture on AWS, including a VPC, subnets, an EC2 instance, and an RDS database. The architecture includes one public subnet for the EC2 instance and two private subnets for the RDS database.
 
+
+![alt text](screenshots/lab24.drawio.svg)
+
+## The architecture deployed in this lab includes:
+- A VPC with a public and private subnet in each of two availability zones.
+- An Internet Gateway attached to the VPC.
+- A public route table associated with the public subnets.
+- Security groups for EC2 instances and RDS instances.
+- An EC2 instance in the public subnet.
+- Two RDS MySQL database instances in the private subnets, each in a different availability zone.
+
 ## Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) installed
@@ -36,18 +47,18 @@ This project uses Terraform to define and deploy a multi-tier architecture on AW
     ```sh
    terraform init
     ```
-    ![alt text](init.png)
+    ![alt text](screenshots/init.png)
 
 3. Review and adjust variables in `variables.tf` according to your requirements.
 
    ```bash
    terraform plan 
    ```
-   ![alt text](plan.png)
+   ![alt text](screenshots/plan.png)
 
-   ![alt text](plan1.png)
+   ![alt text](screenshots/plan1.png)
 
-   ![alt text](plan2.png)
+   ![alt text](screenshots/plan2.png)
 
 4. Apply the Terraform configuration:
 
@@ -60,13 +71,13 @@ Feel free to customize the configuration files as per your project requirements.
 
 ## Screenshots
 
-   ![alt text](lab-24-subnets.png)
+   ![alt text](screenshots/lab-24-subnets.png)
 
-   ![alt text](lab-24-rt.png)
+   ![alt text](screenshots/lab-24-rt.png)
 
-   ![alt text](lab-24-igw.png)
+   ![alt text](screenshots/lab-24-igw.png)
 
-   ![alt text](lab-24-rds.png)
+   ![alt text](screenshots/lab-24-rds.png)
 
 ## Cleanup
 
@@ -75,8 +86,3 @@ After testing or when done with the resources, you can destroy them using Terraf
 ```bash
 terraform destroy --auto-approve
 ```
-
-## Notes
-
-- Make sure to review and understand the changes before applying Terraform to avoid unintended consequences.
-- Always follow best practices for security and cost optimization when deploying resources on AWS.
