@@ -2,7 +2,7 @@
 
 This project uses Terraform to define and deploy a multi-tier architecture on AWS, including a VPC, subnets, an EC2 instance, and an RDS database. The architecture includes one public subnet for the EC2 instance and two private subnets for the RDS database.
 
-
+## Architecture Overview
 ![alt text](screenshots/lab24.drawio.svg)
 
 ## The architecture deployed in this lab includes:
