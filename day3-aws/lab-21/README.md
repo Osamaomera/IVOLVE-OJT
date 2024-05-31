@@ -233,7 +233,6 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 	![alt text](screenshots/lb5.png)
 	
 5. Access the Web Servers:
-
 ![alt text](screenshots/lb-output.gif)
 
 -----------------------------------------------------
