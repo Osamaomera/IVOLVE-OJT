@@ -3,7 +3,19 @@
 This Terraform project automates the deployment of a multi-tier architecture on AWS. The architecture includes a Virtual Private Cloud (VPC), public and private subnets, EC2 instances, and RDS databases.
 
 ## Architecture Overview
+![!alt text](screenshots/lab-25.drawio.svg)
 
+### The architecture deployed in this lab includes:
+- modules
+    - ec2
+        - EC2 and security
+    - rds
+        - RDS MySQL database
+    - vpc 
+        - A VPC with a public and private subnet in each of two availability zones.
+        - An Internet Gateway attached to the VPC.
+        - A public route table associated with the public subnets.
+        - Security Groups pf Ec2 instance and RDS
 
 ## Project Structure
 
