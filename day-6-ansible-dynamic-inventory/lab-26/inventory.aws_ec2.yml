@@ -3,4 +3,9 @@ regions:
   - us-east-1
 filters:
   instance-state-name: running
-#   tag:Name: jenkins-server
+  tag:Name: "*"
+keyed_groups:
+  - key: tags.Name
+    prefix: tag_Name_
+compose:
+  ansible_host: instance_id  # Change to use instance_id instead of IP
