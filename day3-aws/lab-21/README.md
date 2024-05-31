@@ -60,6 +60,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 
 6. Click on “Create subnet”.
 
+	![alt text](screenshots/subnets.png)
 -------------------------------------------------------------------
 ## Step 3: Create internet gateway  
 
@@ -155,10 +156,10 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 
 ```sh
 	sudo yum update -y
-	sudo yum install httpd -y
-	sudo systemctl start httpd
-	sudo systemctl enable httpd
-	sudo systemctl status httpd
+	sudo yum install apache2 -y
+	sudo systemctl start apache2
+	sudo systemctl enable apache2
+	sudo systemctl status apache2
 ```
 
 ![alt text](screenshots/apache-ec2-2.png)
@@ -213,13 +214,15 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 26. Click on **Include as pending below**.
 27. Review your settings and click **Create target group**.
 
-	![alt text](screenshots/regestriestarget2.png)
+	![alt text](screenshots/target_group.png)
 
 28. Select this **ivolve-targetgroup**.
 
 	![alt text](screenshots/lb4.png)
 
 29. Click on **Create load balancer**.
+
+	![alt text](screenshots/lb.png)
 
 -------------------------------------------------------------------
 
@@ -234,6 +237,6 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 	
 5. Access the Web Servers:
 
-![alt text](screenshots/lb-output.gif)
+	![alt text](screenshots/lb-output_converted.gif)
 
 -----------------------------------------------------
