@@ -1,6 +1,26 @@
-# Lab-2
-## Shell Scripring Basics
-Create a shell script that would send an alert email when disk usage exceeds a specific threshold
+# Lab 2 Shell Scripring Basics
+This script collects system storage, CPU, and memory usage information and sends it via email to a specified Gmail address using `msmtp`.
+
+## Prerequisites
+
+1. **msmtp**: Ensure `msmtp` is installed and configured correctly.
+2. **mailutils**: Install `mailutils` for `mailx` command if not already installed.
+
+### Installation
+
+1. **Install msmtp and mailutils**:
+```bash
+    sudo apt update
+    sudo apt install msmtp mailutils
+```
+2. **Configure msmtp**:
+    Create a `~/.msmtprc` file with the following content:
+
+3. **Set Permissions**:
+    Ensure the `~/.msmtprc` file has the correct permissions:
+```bash
+    chmod 600 ~/.msmtprc
+```
 
 ### Usage
 1. clone the repository or download the `alert-disk-usage.sh` script to your local machine.
