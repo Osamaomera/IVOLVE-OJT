@@ -16,7 +16,16 @@ install ansible and configure automation paltform on control nodes, create inven
     serverb.lab.example.com
     serverc.lab.example.com
     ```
-3. Run the ad-hoc command in ansible to 3 hosts 
+3. create inventory and ansible.cfg to using defulats
+
+show the inventory
+  ```
+  servera.lab.example.com
+  serverb.lab.example.com
+  erverc.lab.example.com
+  ```
+
+4. Run the ad-hoc command in ansible to 3 hosts 
     ```sh
     ansible all -i inventory -b -m shell -a 
     "useradd osama && touch /home/osama/file{1..3}.txt"

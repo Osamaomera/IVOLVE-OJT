@@ -1,8 +1,17 @@
 # Lab-6
 ## Ansible Playbook to Install mysql database and create a user to query database
-This repository contains an Ansible playbook to install mysql database on target host and create a mysql users that can query data and creat tables.
+This repository contains an Ansible playbook designed to install mysql database on target host and create a mysql users and verification of database functionality using the created user.
 
-### Usage
+## Prerequisites
+1. Ansible: Ensure Ansible is installed on your control node.
+2. SSH Access: Ensure SSH access to the target node(s) where MySQL will be installed.
+3. Inventory File: Prepare an inventory file containing the IP addresses or hostnames of the target server(s).
+4. Vault File: Create a vault file (vault.yml) to securely store sensitive information such as passwords.
+***
+
+
+
+### Installation steps
 1. install ansible automation platform.
     ```
     sudo apt install ansible #for ubuntu
