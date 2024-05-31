@@ -233,13 +233,7 @@ Create a VPC with 2 subnets, launch 2 EC2 instances with Nginx and Apache instal
 	![alt text](screenshots/lb5.png)
 	
 5. Access the Web Servers:
-6. Open a web browser and enter the DNS name.
-this is **nginx**
-	![alt text](screenshots/lb-nginx.png)
 
-7. Refresh the page multiple times to see both Nginx and Apache
-this is **Apache** 
-
-	![alt text](screenshots/lb-apache.png)
+![alt text](screenshots/lb-output.gif)
 
 -----------------------------------------------------
