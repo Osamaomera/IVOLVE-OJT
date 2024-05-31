@@ -28,7 +28,6 @@
     name: java-11-amazon-corretto-devel
     state: present
 
-
 # Install Jenkins
 - name: Add Jenkins repository
   yum_repository:
@@ -47,29 +46,5 @@
 - name: Start and enable Jenkins service
   systemd:
     name: jenkins
-    state: started
-    enabled: yes
-
-# Install Docker using yum package manager
-- name: Add Docker repository
-  yum_repository:
-    name: docker
-    description: Docker CE Stable - x86_64
-    baseurl: https://download.docker.com/linux/centos/7/x86_64/stable
-    gpgcheck: yes
-    gpgkey: https://download.docker.com/linux/centos/gpg
-    state: present
-
-- name: Install Docker
-  yum:
-    name: 
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-    state: present
-
-- name: Start and enable Docker service
-  systemd:
-    name: docker
     state: started
     enabled: yes
