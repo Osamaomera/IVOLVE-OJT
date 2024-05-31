@@ -1,0 +1,6 @@
+---
+- name: Ping all hosts
+  hosts: all
+  tasks:
+    - name: Ping EC2 instances
+      ping:
