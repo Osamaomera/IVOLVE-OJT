@@ -14,7 +14,7 @@ The inventory file `inventories/hosts` contains the following:
 ## Roles
 
 
-![alt text](role2.png)
+![alt text](screenshots/role2.png)
 
 ### Docker Role
 
@@ -160,16 +160,16 @@ Replace `inventory` with the path to your actual Ansible inventory file. Adjust 
 ## Screenshots.
 ## Key created 
   
-  ![alt text](create-key.png)
+  ![alt text](screenshots/create-key.png)
 
-  ![alt text](copy-key.png)
+  ![alt text](screenshots/copy-key.png)
 
 ## Run Playbooks
 ### jenkins and docker 
 
-  ![alt text](jenkins-docker.png)
+  ![alt text](screenshots/jenkins-docker.png)
 
-  ![alt text](jenkins-docker2.png)
+  ![alt text](screenshots/jenkins-docker2.png)
 
 ### OC 
 
@@ -177,8 +177,8 @@ Replace `inventory` with the path to your actual Ansible inventory file. Adjust 
 
 ## Ensure the installing by run adhook commands
 
-![alt text](docker-output.png)
+![alt text](screenshots/docker-output.png)
 
-![alt text](jenkins-output.png)
+![alt text](screenshots/jenkins-output.png)
 
-![alt text](oc-output.png)
+![alt text](screenshots/oc-output.png)
