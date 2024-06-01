@@ -154,7 +154,7 @@ chmod +x inventories/ec2.py
 ### Update your playbook command to use the dynamic inventory script:
 
 ```sh
-ansible-playbook -i inventories/ec2.py site.yml
+ansible-playbook -i ec2.py ping.yml
 ```
 
 ### And an example plugin might look like this :
