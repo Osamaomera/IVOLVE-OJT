@@ -1,4 +1,5 @@
-# Multi-Tier Application Deployment with Terraform
+# Lab 1
+## Multi-Tier Application Deployment with Terraform
 
 This project uses Terraform to define and deploy a multi-tier architecture on AWS, including a VPC, subnets, an EC2 instance, and an RDS database. The architecture includes one public subnet for the EC2 instance and two private subnets for the RDS database.
 

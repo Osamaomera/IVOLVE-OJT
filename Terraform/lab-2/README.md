@@ -1,4 +1,5 @@
-# Terraform Multi-Tier Application Deployment
+# Lab 2
+## Terraform Multi-Tier Application Deployment
 
 This Terraform project automates the deployment of a multi-tier architecture on AWS. The architecture includes a Virtual Private Cloud (VPC), public and private subnets, EC2 instances, and RDS databases.
 

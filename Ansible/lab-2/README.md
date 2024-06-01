@@ -1,4 +1,4 @@
-# Lab-5
+# Lab-2
 ## Ansible Playbook to Install NGINX and Deploy a Sample HTML File
 This repository contains an Ansible playbook to install NGINX on target host and deploy a sample HTML file to the NGINX web directory.
 
