@@ -173,7 +173,7 @@ Replace `inventory` with the path to your actual Ansible inventory file. Adjust 
 
 ### OC 
 
-  ![alt text](oc.png)
+  ![alt text](screenshots/oc.png)
 
 ## Ensure the installing by run adhook commands
 
