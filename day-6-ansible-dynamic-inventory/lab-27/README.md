@@ -110,7 +110,7 @@ This playbook runs the oc role.
   vars:
     oc_version: "4.10.1"
   roles:
-    - oc
+    - roles/oc
 ```
 
 ## Usage
