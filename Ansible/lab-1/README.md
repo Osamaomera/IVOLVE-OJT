@@ -33,12 +33,12 @@ show the inventory
 #  Output 
 ## Server A
 ### the user osama is created and also 3 files is created (file1,file2,file3).txt
-  ![](connect-to-server-output.png)
+  ![](screenshots/connect-to-server-output.png)
 
 # Server B
 ### the user osama is created and also 3 files is created (file1,file2,file3).txt
-  ![](serverb-output.png)
+  ![](screenshots/serverb-output.png)
     
 # Server C
 ### the user osama is created and also 3 files is created (file1,file2,file3).txt
-  ![](serverc-output.png)
+  ![](screenshots/serverc-output.png)

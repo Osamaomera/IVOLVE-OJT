@@ -62,12 +62,12 @@ location / {
 ansible-playbook -i inventory playbook.yml --extra-vars ansible_sudo_pass=osama
 ```
 ### Successfully run of ansible playbook  
-![](ansible-lab5.png)
+![](screenshots/ansible-lab5.png)
 
 ### ssh to connect to host which run nginx and show the output of page by curl 
 
-![](nginx.png)
+![](screenshots/nginx.png)
 
 ### The result Page when connect to nginx 
 
-![](output-nginx.png)
+![](screenshots/output-nginx.png)
