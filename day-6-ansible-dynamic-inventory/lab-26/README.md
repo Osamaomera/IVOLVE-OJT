@@ -66,6 +66,7 @@ This project demonstrates how to use Ansible for dynamic inventory management an
    ```sh
    pip install boto3
    ```
+   ![alt text](screenshots/install.png)
 
 4. **Setup Inventory**
 
@@ -83,20 +84,10 @@ This project demonstrates how to use Ansible for dynamic inventory management an
    host_key_checks: False
    ```
 
-2. **Setup Inventory**
-
-   Define your inventory in the `inventories` directory. For dynamic inventory, you can use a script or a plugin.
-
-   Example static inventory file (`inventories/hosts`):
-
-   ```ini
-   [all]
-   54.226.207.67 ansible_user=ec2-user ansible_ssh_private_key_file=/path/to/your/key.pem
-   ```
-
-3. **Configure Ansible Roles**
+5. **Configure Ansible Roles**
 
    Each role should have its tasks defined in the `tasks` directory.
+
 
 ## Usage
 
@@ -124,8 +115,6 @@ To run the playbooks, use the following commands:
    ```bash
    ansible-playbook -i inventory.aws_ec2.yml ping_playbook.yml
    ```
-
-Replace `inventory` with the path to your actual Ansible inventory file. Adjust the variable values (`docker_user` and `oc_version`) as needed.
 
 
 ## Dynamic Inventory Configuration
@@ -208,5 +197,24 @@ ansible-playbook -i inventories/ec2.py site.yml
    Check the `screenshots` directory for verification steps and screenshots to ensure that Docker, Jenkins, and OpenShift CLI are installed correctly.
 
 ## Screenshots
+### AWS Configure
 
-Add your screenshots in the `screenshots` directory to document the setup and verification process.
+![alt text](screenshots/aws.png)
+
+### Ensure that Ansible show the instances in AWS
+
+![alt text](screenshots/instances.png)
+
+![alt text](screenshots/inventory-graph.png)
+
+### run the playbooks :
+
+1. **Run Docker Playbook:**
+
+   ![alt text](screenshots/docker.png)
+
+2. **Run Ping Playbook:**
+
+   ![alt text](screenshots/ping.png)
+
+------------------------------------------------------------------------------
