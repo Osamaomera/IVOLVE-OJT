@@ -1,0 +1,58 @@
+# Nginx Deployment with Persistent Storage
+
+This guide provides instructions for deploying an Nginx deployment with persistent storage using Openshift and a PersistentVolumeClaim (PVC). The deployment will mount the persistent storage to `/usr/share/nginx/html` within the Nginx container.
+
+## Prerequisites
+
+- Access to a Kubernetes cluster
+- `oc` CLI installed and configured
+- Basic knowledge of Kubernetes concepts
+- PersistentVolume (PV) and PersistentVolumeClaim (PVC) configured in your Openshift cluster
+
+## Steps to Deploy
+
+1. Clone this repository to your local machine:
+   ```sh
+   git clone https://github.com/your-username/your-repo.git
+   ```
+
+2. Navigate to the repository directory:
+   ```sh
+   cd your-repo
+   ```
+
+3. Apply the PersistentVolume (PV) and PersistentVolumeClaim (PVC) configurations:
+   - Update `nginx-pv.yaml` with the correct `hostPath` or storage configuration for your environment.
+   - Apply the PV and PVC using `oc`:
+     ```sh
+     oc apply -f nginx-pv.yaml
+     ```
+
+4. Update the Nginx deployment configuration:
+   - Update `nginx-deployment.yaml` with the correct PVC name (`nginx-pvc`) and image if needed.
+   - Apply the deployment configuration using `kubectl`:
+     ```sh
+     oc apply -f nginx-deployment.yaml
+     ```
+
+5. Verify the deployment:
+   ```sh
+   oc get deployments
+   oc get pods
+   ```
+
+6. Access the Nginx service:
+   - Get the service details:
+     ```sh
+     oc get svc
+     ```
+   - Access the Nginx service using the ClusterIP or NodePort.
+
+## Files Included
+
+- `nginx-pv.yaml`: PersistentVolume (PV) configuration for Nginx persistent storage.
+- `nginx-pvc.yaml`: PersistentVolumeClaim (PVC) configuration for Nginx persistent storage.
+- `nginx-deployment.yaml`: Nginx deployment configuration with persistent storage.
+- `README.md`: This file providing deployment instructions.
+
+## Screenshots
