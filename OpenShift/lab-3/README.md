@@ -87,3 +87,26 @@ This guide provides instructions for deploying an Nginx deployment with persiste
 ### Delete a Pod and ensure the created file exist or not **Of Course Now the file is exist because the deployment Now become stateful by using PV and PVC**
 
 ![alt text](screenshots/new-file2.png)
+-------------------------------------------------------------------------------
+
+# Comparison of PV, PVC, and StorageClass in Kubernetes
+
+
+Here's a comparison table between PersistentVolumes (PV), PersistentVolumeClaims (PVC), and StorageClasses in Kubernetes:
+
+   | Feature                | PersistentVolume (PV)      | PersistentVolumeClaim (PVC) | StorageClass            |
+   |------------------------|----------------------------|------------------------------|-------------------------|
+   | **Definition**         | A piece of provisioned storage in the cluster | A request for storage by a user or a pod | Defines classes of storage in Kubernetes |
+   | **Usage**              | Used to abstract details of how storage is provided from how it is consumed by pods | Used by pods to claim a PV with specific characteristics | Used by PVCs to dynamically provision PVs |
+   | **Binding**            | Statically or dynamically bound to PVCs | Binds to available PVs that match criteria | Dynamically provisions PVs based on PVC requests |
+   | **Lifecycle**          | Independent lifecycle until manually deleted | Created, used by pods, and deleted | Cluster-wide, persists until deleted |
+   | **Configuration**      | Defined by administrators in YAML manifests | Defined by users in YAML manifests | Defined by administrators in YAML manifests |
+   | **Example YAML**       | See PV example YAML in previous response | See PVC example YAML in previous response | See StorageClass example YAML in previous response |
+
+This table provides a quick overview of the differences between PVs, PVCs, and StorageClasses in Kubernetes.
+
+## Summary
+
+- **PV**: Represents a piece of provisioned storage in the cluster.
+- **PVC**: Requests storage with specific characteristics and binds to available PVs.
+- **StorageClass**: Defines classes of storage and provisions PVs dynamically based on PVC requests.
