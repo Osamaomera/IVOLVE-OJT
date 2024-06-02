@@ -103,3 +103,4 @@ These steps will create a MySQL StatefulSet with a persistent volume for data st
 
 ### Screenshots
 
+![alt text](statefulset.png)
