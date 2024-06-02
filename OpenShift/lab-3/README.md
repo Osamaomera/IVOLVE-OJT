@@ -13,24 +13,26 @@ This guide provides instructions for deploying an Nginx deployment with persiste
 
 1. Clone this repository to your local machine:
    ```sh
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Osamaomera/IVOLVE-OJT.git
    ```
 
 2. Navigate to the repository directory:
    ```sh
-   cd your-repo
+   cd OpenShift
+   cd lab-3
    ```
 
 3. Apply the PersistentVolume (PV) and PersistentVolumeClaim (PVC) configurations:
    - Update `nginx-pv.yaml` with the correct `hostPath` or storage configuration for your environment.
    - Apply the PV and PVC using `oc`:
      ```sh
-     oc apply -f nginx-pv.yaml
+     oc apply -f nginx-pv.yml
+     oc apply -f nginx-pvc.yml
      ```
 
 4. Update the Nginx deployment configuration:
-   - Update `nginx-deployment.yaml` with the correct PVC name (`nginx-pvc`) and image if needed.
-   - Apply the deployment configuration using `kubectl`:
+   - Update `nginx-deployment.yml` with the correct PVC name (`nginx-pvc`) and image if needed.
+   - Apply the deployment configuration using `oc`:
      ```sh
      oc apply -f nginx-deployment.yaml
      ```
@@ -50,9 +52,38 @@ This guide provides instructions for deploying an Nginx deployment with persiste
 
 ## Files Included
 
-- `nginx-pv.yaml`: PersistentVolume (PV) configuration for Nginx persistent storage.
-- `nginx-pvc.yaml`: PersistentVolumeClaim (PVC) configuration for Nginx persistent storage.
-- `nginx-deployment.yaml`: Nginx deployment configuration with persistent storage.
+- `nginx-pv.yml`: PersistentVolume (PV) configuration for Nginx persistent storage.
+- `nginx-pvc.yml`: PersistentVolumeClaim (PVC) configuration for Nginx persistent storage.
+- `deployment-pvc.yml`: Nginx deployment configuration with persistent storage.
+- `deployment.yml` : Nginx deployment configuration without persistent storage.
 - `README.md`: This file providing deployment instructions.
 
 ## Screenshots
+
+### First Apply the `deployment.yml` file without PV and PVC
+
+![alt text](screenshots/apply.png)
+
+### Create a File contain a Text
+
+![alt text](screenshots/file1.png)
+
+### Delete a Pod and ensure the created file exist or not !!  **`Of Course the file is not exist because the deployment is stateless`**
+
+![alt text](screenshots/file2.png)
+
+### After Create a PV and PVC and Assign it to deplyment configuration `deployment-pvc.yml` to make deployment stateful 
+
+![alt text](screenshots/pv.png)
+
+![alt text](screenshots/pvc.png)
+
+![alt text](screenshots/pvc-deployment.png)
+
+### Create a File contain a Text as Previous try
+
+![alt text](screenshots/new-file1.png)
+
+### Delete a Pod and ensure the created file exist or not **Of Course Now the file is exist because the deployment Now become stateful by using PV and PVC**
+
+![alt text](screenshots/new-file2.png)
