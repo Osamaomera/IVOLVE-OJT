@@ -37,10 +37,21 @@ A NodePort service is a Kubernetes service that exposes an application to the ou
     oc apply -f jenkins_service.yml
     ```
     ![alt text](screenshots/service.png)
-    
+
 5. Monitor the deployment and service using `oc get pods`, `oc get deployments`, and `oc get services`.
 
 6. Once the deployment is complete, access Jenkins using the NodePort service URL.
+    ![alt text](screenshots/readness-liveness.png)
+    
+    ![alt text](screenshots/describe-pod.png)
+
+    ![alt text](screenshots/pod-event-1.png)
+
+## Jenkins Start
+
+![alt text](screenshots/jenkins-initial.png)
+
+![alt text](screenshots/output.png)
 
 
 ## Additional Notes
@@ -48,7 +59,4 @@ A NodePort service is a Kubernetes service that exposes an application to the ou
 - Make sure to configure appropriate resource limits and requests for Jenkins containers based on your deployment environment and requirements.
 
 ## Author
-[Your Name]
-
-## License
-This project is licensed under the [MIT License](LICENSE).
+Osama Ayman
