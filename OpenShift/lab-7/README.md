@@ -53,6 +53,11 @@ A NodePort service is a Kubernetes service that exposes an application to the ou
 
 ![alt text](screenshots/output.png)
 
+![alt text](screenshots/jenkins-initial.png)
+
+![alt text](screenshots/jenkins-install.png)
+
+![alt text](screenshots/jenkins-start.png)
 
 ## Additional Notes
 - Ensure that you have a Kubernetes cluster set up and configured before deploying Jenkins.
