@@ -11,5 +11,5 @@ spec:
   tolerations:
   - key: "color"
     operator: "Equal"
-    value: "red"
+    value: "red" #"blue"
     effect: "NoSchedule"
