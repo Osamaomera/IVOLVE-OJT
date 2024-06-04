@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 8080
           name: http-port
-        - containerPort: 50000
+        - containerPort: 8080
           name: jnlp-port
         readinessProbe:
           httpGet:
