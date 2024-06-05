@@ -45,35 +45,13 @@ pipeline {
 	//     }
     // }       
         
-        // stage('Build Docker Image') {
-        //     steps {
-        //         script {
-        // 		echo "Building docker image ..."
-        // 		sh "docker build -t ${imageName}:${BUILD_NUMBER} ."
-        //         }
-        //     }
-        // }
-
-       
-        // stage('push Docker Image') {
-        //     steps {
-        //         script {
-        // 		echo "pushing docker image ..."
-		// 	withCredentials([usernamePassword(credentialsId: "${dockerHubCredentialsID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-		// 		sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-        // 		}
-		// 	sh "docker push ${imageName}:${BUILD_NUMBER}"
-        //         }
-        //     }
-        // }
-	    
 	stage('Deploy on OpenShift cluster') {
             steps {
                 script {
         		// Navigate to the directory contains Deployment and Service YAML files
                     dir('Jenkins'){
                         dir('openshift'){
-                            deployOnOpenShift("${openshiftcredintialsID}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
+                            deployOnOpenShift("${openshiftcredintialsID}" , "${imageName}" , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
                         }
                     }
 
