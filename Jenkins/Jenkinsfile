@@ -45,40 +45,6 @@ pipeline {
 	    }
     }       
         
-        stage('Install OpenShift CLI') {
-            steps {
-                script {
-                    // Define the desired version of OpenShift CLI
-                    def ocVersion = '4.10.0'  // Example version, replace with the desired version
-
-                    // Download and install OpenShift CLI
-                    sh """
-                        wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${ocVersion}/openshift-client-linux.tar.gz -P /tmp
-                        tar -xzf /tmp/openshift-client-linux.tar.gz -C /tmp
-                        sudo mv /tmp/oc /usr/local/bin/
-                        sudo mv /tmp/kubectl /usr/local/bin/
-                    """
-                }
-            }
-        }
-
-        stage('Verify OpenShift CLI') {
-            steps {
-                script {
-                    // Verify the installation of OpenShift CLI
-                    sh 'oc version'
-                }
-            }
-        }
-
-        stage('Login to OpenShift') {
-            steps {
-                script {
-                    // Login to OpenShift using the token
-                    sh 'oc login https://api.ocp-training.ivolve-test.com:6443 --token=SERVICE_ACCOUNT_TOKEN'
-                }
-            }
-        }
         // stage('Build Docker Image') {
         //     steps {
         //         script {
