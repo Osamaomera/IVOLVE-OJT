@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-deployment
+spec:
+  selector:
+    matchLabels:
+      app: java-deployment
+  template:
+    metadata:
+      labels:
+        app: java-deployment
+    spec:
+      containers:
+      - name: java-app
+        image: osayman74/java-app:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8082
