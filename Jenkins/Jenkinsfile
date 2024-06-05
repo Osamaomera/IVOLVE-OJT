@@ -31,18 +31,18 @@ pipeline {
 	}
 	
        
-        stage('Build and Push Docker Image') {
-            steps {
-                script {
-                	// Navigate to the directory contains Dockerfile
-                 	dir('Jenkins') {
-                        dir('app-master') {
-                 		    buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
-                    }
-                }
-            }
-	    }
-    }       
+    //     stage('Build and Push Docker Image') {
+    //         steps {
+    //             script {
+    //             	// Navigate to the directory contains Dockerfile
+    //              	dir('Jenkins') {
+    //                     dir('app-master') {
+    //              		    buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
+    //                 }
+    //             }
+    //         }
+	//     }
+    // }       
         
 	stage('Deploy on OpenShift cluster') {
             steps {
