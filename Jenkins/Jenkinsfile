@@ -10,7 +10,6 @@ pipeline {
         imageName   		    = 'osayman74/java-app'     			// DockerHub repo/image name.
         openshiftcredintialsID  = 'openshift'
         OPENSHIFT_PROJECT = 'osamaayman'
-        SERVICE_ACCOUNT_TOKEN = 'SERVICE_ACCOUNT_TOKEN'
     }
     
 
