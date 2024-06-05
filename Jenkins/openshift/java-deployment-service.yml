@@ -16,7 +16,7 @@ spec:
       - name: java-app
         image: osayman74/java-app:latest
         ports:
-        - containerPort: 8082
+        - containerPort: 8081
         # resources:  # Optional: Add resource requests and limits
         #   requests:
         #     memory: "256Mi"
@@ -29,12 +29,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-deployment
+  name: java-service
 spec:
+  type: LoadBalancer
   selector:
     app: java-deployment
   ports:
-  - port: 8082
-    targetPort: 8082
-  type: ClusterIP  # Optional: Specify the type of service (ClusterIP, NodePort, LoadBalancer)
+  - protocl: TCP
+    port: 8081
+    targetPort: 8081
+
 
