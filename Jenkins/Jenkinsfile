@@ -8,7 +8,7 @@ pipeline {
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
         imageName   		    = 'osayman74/java-app'     			// DockerHub repo/image name.
-        OPENSHIFT_SERVER = 'https://api.ocp-training.ivolve-test.com:6443'
+        openshiftcredintialsID  = 'openshift'
         OPENSHIFT_PROJECT = 'osamaayman'
         SERVICE_ACCOUNT_TOKEN = 'SERVICE_ACCOUNT_TOKEN'
     }
@@ -73,7 +73,7 @@ pipeline {
         		// Navigate to the directory contains Deployment and Service YAML files
                     dir('Jenkins'){
                         dir('openshift'){
-                            deployOnOpenShift("${SERVICE_ACCOUNT_TOKEN}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
+                            deployOnOpenShift("${openshiftcredintialsID}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
                         }
                     }
 
