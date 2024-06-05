@@ -2,8 +2,9 @@
 // @Library('github.com/Osamaomera/shared_library') _
 pipeline {
 
-    agent { label 'slave1' }
-    
+    // agent { label 'slave1' }
+    agent any 
+
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
         imageName   		    = 'osayman74/java-app:latest'     			// DockerHub repo/image name.
