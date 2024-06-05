@@ -23,7 +23,7 @@ pipeline {
                     dir('app-master'){
                         
                 	echo "Running Unit Test..."
-			        sh 'chmod 744 gradlew'
+			        sh 'chmod 744 ./gradlew'
 			        sh './gradlew clean test'
                     }
         	    }
