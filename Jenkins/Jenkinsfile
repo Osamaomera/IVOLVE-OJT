@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
-        imageName   		    = 'java-app'     			// DockerHub repo/image name.
+        imageName   		    = 'osayman74/java-app'     			// DockerHub repo/image name.
         OPENSHIFT_SERVER = 'https://api.ocp-training.ivolve-test.com:6443'
         OPENSHIFT_PROJECT = 'osamaayman'
         SERVICE_ACCOUNT_TOKEN = 'SERVICE_ACCOUNT_TOKEN'
