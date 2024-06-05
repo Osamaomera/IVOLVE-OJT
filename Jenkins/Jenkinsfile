@@ -21,11 +21,11 @@ pipeline {
             steps {
                 script {
                     dir('Jenkins'){
-                    dir('app-master'){   
-                	echo "Running Unit Test..."
-			        // sh 'chmod 744 ./gradlew'
-			        // sh './gradlew clean test'
-                    }
+                        dir('app-master'){   
+                	    echo "Running Unit Test..."
+			            // sh 'chmod 744 ./gradlew'
+			            // sh './gradlew clean test'
+                        }
                     }
         	    }
     	    }
@@ -37,14 +37,48 @@ pipeline {
                 script {
                 	// Navigate to the directory contains Dockerfile
                  	dir('Jenkins') {
-                    dir('app-master') {
-                 		buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
+                        dir('app-master') {
+                 		    buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
+                    }
                 }
             }
-                }
 	    }
-        }       
+    }       
         
+        stage('Install OpenShift CLI') {
+            steps {
+                script {
+                    // Define the desired version of OpenShift CLI
+                    def ocVersion = '4.10.0'  // Example version, replace with the desired version
+
+                    // Download and install OpenShift CLI
+                    sh """
+                        wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${ocVersion}/openshift-client-linux.tar.gz -P /tmp
+                        tar -xzf /tmp/openshift-client-linux.tar.gz -C /tmp
+                        sudo mv /tmp/oc /usr/local/bin/
+                        sudo mv /tmp/kubectl /usr/local/bin/
+                    """
+                }
+            }
+        }
+
+        stage('Verify OpenShift CLI') {
+            steps {
+                script {
+                    // Verify the installation of OpenShift CLI
+                    sh 'oc version'
+                }
+            }
+        }
+
+        stage('Login to OpenShift') {
+            steps {
+                script {
+                    // Login to OpenShift using the token
+                    sh 'oc login https://api.ocp-training.ivolve-test.com:6443 --token=SERVICE_ACCOUNT_TOKEN'
+                }
+            }
+        }
         // stage('Build Docker Image') {
         //     steps {
         //         script {
@@ -72,9 +106,9 @@ pipeline {
                 script {
         		// Navigate to the directory contains Deployment and Service YAML files
                     dir('Jenkins'){
-                    dir('openshift'){
-                        deployOnOpenShift("${SERVICE_ACCOUNT_TOKEN}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
-                    }
+                        dir('openshift'){
+                            deployOnOpenShift("${SERVICE_ACCOUNT_TOKEN}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
+                        }
                     }
 
                 }
