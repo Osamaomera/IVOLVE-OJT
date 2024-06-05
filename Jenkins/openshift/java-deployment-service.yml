@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: java-deployment
 spec:
+  replicas: 3  # Specify the number of replicas if you want more than one pod
   selector:
     matchLabels:
       app: java-deployment
@@ -16,6 +17,14 @@ spec:
         image: osayman74/java-app:latest
         ports:
         - containerPort: 8082
+        # resources:  # Optional: Add resource requests and limits
+        #   requests:
+        #     memory: "256Mi"
+        #     cpu: "250m"
+        #   limits:
+        #     memory: "512Mi"
+        #     cpu: "500m"
+
 ---
 apiVersion: v1
 kind: Service
@@ -27,3 +36,5 @@ spec:
   ports:
   - port: 8082
     targetPort: 8082
+  type: ClusterIP  # Optional: Specify the type of service (ClusterIP, NodePort, LoadBalancer)
+
