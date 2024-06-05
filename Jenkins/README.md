@@ -248,8 +248,6 @@ oc apply -f role-rolebinding.yml
 ## THE FINAL WEBSITE AFTER DEPLOYED IN CLUSTER 
 
 
-![alt text](screenshots/6.png)
-
 ## Troubleshooting
 ### Common Issues
 
