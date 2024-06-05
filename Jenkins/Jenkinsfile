@@ -20,6 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    
                     dir('app-master'){
                         
                 	echo "Running Unit Test..."
@@ -35,10 +36,12 @@ pipeline {
             steps {
                 script {
                 	// Navigate to the directory contains Dockerfile
-                 	dir('app-master') {
+                 	dir('Jenkins') {
+                    dir('app-master') {
                  		buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
                 }
-              }
+            }
+                }
 	    }
         }       
         
