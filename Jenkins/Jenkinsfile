@@ -36,7 +36,8 @@ pipeline {
                  		buildandPushDockerImage("${dockerHubCredentialsID}", "${imageName}")
                 }
               }
-	    }       
+	    }
+        }       
         
         // stage('Build Docker Image') {
         //     steps {
