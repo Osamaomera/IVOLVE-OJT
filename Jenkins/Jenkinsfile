@@ -20,12 +20,12 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    
-                    dir('app-master'){
-                        
+                    dir('Jenkins'){
+                    dir('app-master'){   
                 	echo "Running Unit Test..."
 			        // sh 'chmod 744 ./gradlew'
 			        // sh './gradlew clean test'
+                    }
                     }
         	    }
     	    }
@@ -71,8 +71,10 @@ pipeline {
             steps {
                 script {
         		// Navigate to the directory contains Deployment and Service YAML files
+                    dir('Jenkins'){
                     dir('openshift'){
                         deployOnOpenShift("${SERVICE_ACCOUNT_TOKEN}" , String imageName , "${OPENSHIFT_SERVER}", "${OPENSHIFT_PROJECT}")
+                    }
                     }
 
                 }
