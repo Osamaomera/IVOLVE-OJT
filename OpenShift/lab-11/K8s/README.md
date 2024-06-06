@@ -107,8 +107,25 @@ Open a web browser and go to `https://localhost:8080`. Login with the admin user
 ### 11. Monitor and Manage the Application
 In the ArgoCD UI, you should see the `nginx-app` listed. You can now monitor and manage the Nginx application through ArgoCD.
 
+## Screenshots 
 
-### Deploying ELK Using Operators
+![alt text](screenshots/1.png)
+
+![alt text](screenshots/2.png)
+
+![alt text](screenshots/update-pass.png)
+
+![alt text](screenshots/3.png)
+
+![alt text](screenshots/4.png)
+
+![alt text](screenshots/5.png)
+
+![alt text](screenshots/argocd1.png)
+
+![alt text](screenshots/argocd2.png)
+
+## Deploying ELK Using Operators
 
 1. **Install the Elastic Cloud on Kubernetes (ECK) Operator**:
    Ensure you have installed the ECK Operator in your Kubernetes cluster. You can follow the installation steps from the [official ECK documentation](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-eck.html).
@@ -163,3 +180,11 @@ In the ArgoCD UI, you should see the `nginx-app` listed. You can now monitor and
 
 5. **Access Kibana UI**:
    Open a web browser and go to `http://localhost:5601`. You can now access the Kibana UI and monitor your Elasticsearch cluster.
+
+## Screenshots
+
+![alt text](screenshots/elk-create.png)
+
+![alt text](screenshots/elk-create2.png)
+
+![alt text](screenshots/elk-create3.png)
