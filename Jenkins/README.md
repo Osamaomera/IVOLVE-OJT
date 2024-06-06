@@ -5,7 +5,7 @@
 1. Jenkins Master: Orchestrates the pipeline.
 2. Jenkins Slave: Executes the build and push tasks.
 3. Docker Hub: Hosts the Docker images.
-4. OpenShift: Deploys the application in the ahmedgomaa namespace (optinal).
+4. OpenShift: Deploys the application in the osamaayman namespace (optinal).
 
 
 ## Prerequisites
