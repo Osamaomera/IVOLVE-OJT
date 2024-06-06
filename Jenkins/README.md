@@ -33,6 +33,8 @@ Before you begin, ensure you have the following:
     - Add the Slave node in Jenkins: Manage Jenkins > Manage Nodes > New Node.
     - creating slave in EC2 in aws
 
+    ![alt text](screenshots/ec2.png)
+
 ![alt text](screenshots/slave1.png)
 
 ![alt text](screenshots/slave2.png)
