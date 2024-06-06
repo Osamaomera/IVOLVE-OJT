@@ -19,8 +19,10 @@ The objective of this lab is to use Source-to-Image (S2I) to build container ima
 
 Example of S2I Build using `oc new-build`:
 ```sh
-oc new-build openshift/python:3.8~https://github.com/openshift/python-ex.git --name=my-python-app
+oc new-build nginx~https://github.com/IbrahimmAdel/html.git --name=my-html-app
 ```
+
+![alt text](screenshots/create.png)
 
 Example of SourceStrategy BuildConfig YAML:
 ```yaml
@@ -32,7 +34,7 @@ spec:
   source:
     type: Git
     git:
-      uri: "https://github.com/myrepo.git"
+      uri: "https://github.com/IbrahimmAdel/html.git"
   strategy:
     type: Source
     sourceStrategy: {}
@@ -48,7 +50,7 @@ spec:
   source:
     type: Git
     git:
-      uri: "https://github.com/myrepo.git"
+      uri: "https://github.com/IbrahimmAdel/html.git"
   strategy:
     type: Docker
     dockerStrategy: {}
@@ -102,6 +104,8 @@ spec:
    oc new-build nginx:latest~https://github.com/IbrahimmAdel/html.git --name=my-html-app -n osamaayman
    ```
 
+   ![alt text](screenshots/create.png)
+
 2. **Start the Build Process:**
    ```sh
    oc start-build my-html-app -n osamaayman
@@ -117,8 +121,12 @@ spec:
    oc expose service/my-html-app -n osamaayman
    ```
 
+   ![alt text](screenshots/expose.png)
+
 5. **Access the Website:**
    Get the route URL using `oc get route` and access the website in your browser.
+
+   ![alt text](screenshots/output.png)
 
 ### Method 2: Using BuildConfig and DeploymentConfig YAML Files
 
@@ -138,6 +146,8 @@ spec:
    oc logs -f build/my-html-app-<build-id> -n osamaayman
    ```
 
+   ![alt text](screenshots/logs.png)
+
 4. **Create DeploymentConfig:**
    Create a file named `deploymentconfig.yaml` with the DeploymentConfig YAML content provided earlier. Apply the YAML file:
    ```sh
@@ -152,6 +162,8 @@ spec:
 6. **Access the Website:**
    Get the route URL using `oc get route` and access the website in your browser.
 
+   ![alt text](screenshots/output2.png)
+
 ### Method 3: Using GUI (OpenShift Console)
 
 1. **Import Git Repository:**
@@ -162,22 +174,19 @@ spec:
    - Start the build and monitor the progress.
    - Expose the service from the console.
 
----
+   ![alt text](screenshots/gui1.png)
 
-## Screenshots
+   ![alt text](screenshots/gui2.png)
 
-1. **New Build using `oc new-build`:**
-   ![New Build](path/to/new-build.png)
+   ![alt text](screenshots/gui3.png)
 
-2. **Build Logs:**
-   ![Build Logs](path/to/build-logs.png)
+   ![alt text](screenshots/gui4.png)
 
-3. **Expose Service:**
-   ![Expose Service](path/to/expose-service.png)
+   ![alt text](screenshots/gui5.png)
 
-4. **Route URL:**
-   ![Route URL](path/to/route-url.png)
+   ![alt text](screenshots/gui6.png)
 
----
+   ![alt text](screenshots/gui7.png)
 
-By following these steps and using the provided examples, you should be able to successfully create, build, and deploy your application using the Source-to-Image (S2I) workflow in OpenShift.
+   ![alt text](screenshots/output2.png)
+-------------------
