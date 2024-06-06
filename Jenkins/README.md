@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 1. Jenkins Master and Slave setup
 2. Docker installed on Jenkins Slave
 3. Docker Hub account
-4. OpenShift cluster with access to the ahmedgomaa namespace
+4. OpenShift cluster with access to the osamaayman namespace
 5. Jenkins Shared Library
 6. kubectl installed on Jenkins Slave
 
