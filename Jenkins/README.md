@@ -33,10 +33,20 @@ Before you begin, ensure you have the following:
     - Add the Slave node in Jenkins: Manage Jenkins > Manage Nodes > New Node.
     - creating slave in EC2 in aws
 
-![alt text](screenshots/1.png)
-    
+![alt text](screenshots/slave1.png)
+
+![alt text](screenshots/slave2.png)
+
+![alt text](screenshots/slave3.png)
+
+![alt text](screenshots/slave4.png)
+
 - using ssh connection between master and slave 
     
+![alt text](screenshots/slave-success.png)
+
+![alt text](screenshots/slave-success2.png)
+
 ![alt text](screenshots/slave-success3.png)
 
 
@@ -129,7 +139,7 @@ pipeline {
 
 
 ```
-## the image after ppushing in DockerHub
+## the image after pushing in DockerHub
 
 ![alt text](screenshots/image.png)
 
@@ -142,12 +152,16 @@ my custem Shared Library you will find i there
 https://github.com/Osamaomera/shared-library-java-app
 ```
 
-- buildAndPush.groovy:
+- buildandPushDockerImage.groovy:
 
 ![alt text](screenshots/build-groovy.png)
 
+- deployOnOpenShift.groovy:
+
+![alt text](screenshots/deploy-on-openshift-groovy.png)
+
 ### OpenShift Deployment Configuration
-Create a DeplymentAndSvc.yml file for your OpenShift cluster with the following content:
+Create a java-deployment-service.yml file for your OpenShift cluster with the following content:
 
 ```yaml
 
@@ -246,6 +260,8 @@ oc apply -f role-rolebinding.yml
 ![alt text](screenshots/success-stages.png)
 
 ## THE FINAL WEBSITE AFTER DEPLOYED IN CLUSTER 
+
+![alt text](screenshots/get-all.png)
 
 
 ## Troubleshooting
