@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: my-html-app-file
+  namespace: osamaayman
+spec:
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/IbrahimmAdel/html.git"
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'registry.access.redhat.com/rhscl/nginx-114-rhel7:latest'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'my-html-app-file:latest'

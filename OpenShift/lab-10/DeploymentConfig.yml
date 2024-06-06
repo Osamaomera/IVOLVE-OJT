@@ -1,0 +1,19 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: my-html-app-file
+  namespace: osamaayman
+spec:
+  replicas: 3
+  selector:
+    app: my-html-app-file
+  template:
+    metadata:
+      labels:
+        app: my-html-app-file
+    spec:
+      containers:
+        - name: my-html-app-container
+          image: "my-html-app:latest"
+          ports:
+            - containerPort: 80
