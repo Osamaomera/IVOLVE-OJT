@@ -1,4 +1,4 @@
-# Ansible Lab 6
+# Ansible Lab 5 Ansible Roles for Application Deployment
 
 This project demonstrates the use of Ansible to automate the installation of Docker, Jenkins, and the OpenShift CLI (oc) on target hosts.
 
